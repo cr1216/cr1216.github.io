@@ -1,50 +1,438 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>我的个人主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>您的姓名 - 个人主页</title>
     <style>
+        /* ===== jemdoc 样式表 (已整合) ===== */
+        /* 以下内容来自您提供的 jemdoc.css，未作修改 */
+        table#tlayout {
+            border: none;
+            border-collapse: separate;
+            background: white;
+        }
+        html {
+            background-color: #f5f5f5; /* #eeeeee */
+        }
         body {
-            font-family: '微软雅黑', Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: Georgia, serif;
+            color: #000;
+            background-color: #f5f5f5; /* #ffffff */
+            text-align: left; /* for IE */
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+            max-width: 960px;
+        }
+        #layout-menu {
+            background: #f6f6f6;
+            border: 1px solid #dddddd;
+            padding-top: 0.5em;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 1.0em;
+            width: auto;
+            white-space: nowrap;
+            text-align: left;
+            vertical-align: top;
+        }
+        #layout-menu td {
+            background: #f4f4f4;
+            vertical-align: top;
+        }
+        #layout-content {
+            padding-top: 0.3em;
+            padding-left: 1.0em;
+            padding-right: 1.0em;
+            border: none;
+            background: #f5f5f5;
+            text-align: left;
+            vertical-align: top;
+        }
+        #layout-menu a {
+            line-height: 1.5em;
+            margin-left: 0.5em;
+        }
+        tt {
+            background: #ffffdd;
+        }
+        pre, tt {
+            font-size: 90%;
+            font-family: monaco, monospace;
+        }
+        a, a > tt {
+            color: #1874CD;
+        }
+        a:link {
+            color: #0055c9;
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #5D478B;
+        }
+        a:hover {
+            color: Blue;
+            text-decoration: underline;
+        }
+        a:active {
+            color: red;
+        }
+        #layout-menu a.current:link, #layout-menu a.current:visited {
+            color: #022b6d;
+            border-bottom: 1px gray solid;
+        }
+        #layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
+            color: #527bbd;
+            text-decoration: none;
+        }
+        #layout-menu a:hover {
+            text-decoration: none;
+        }
+        div.menu-category {
+            border-bottom: 1px solid gray;
+            margin-top: 0.5em;
+            padding-top: 0.3em;
+            padding-bottom: 0.2em;
+            font-weight: bold;
+        }
+        div.menu-item {
+            padding-left: 16px;
+            text-indent: -16px;
+        }
+        div#toptitle {
+            margin-bottom: 1.5em;
+            padding-bottom: 0.2em;
+            /* border-bottom: 3px double gray; */
+        }
+        /* Reduce space if we begin the page with a title. */
+        div#toptitle + h2, div#toptitle + h3 {
+            margin-top: 0.7em;
+        }
+        div#subtitle {
+            margin-top: -0.5em;
+            margin-bottom: -1.2em;
+            padding-top: 0em;
+            padding-bottom: 0em;
+        }
+        em {
+            font-style: italic;
+        }
+        strong {
+            font-weight: bold;
+        }
+        h1, h2, h3 {
+            color: #000000;
+            margin-top: 0.8em;
+            margin-bottom: 0.3em;
+            padding-top: 0.3em;
+            padding-bottom: 0.2em;
+            line-height: 1.0;
+            border-bottom: 1px solid #aaaaaa;
         }
         h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            margin-top: 0.0em;
+            font-size: 150%;
+            border-bottom: none;
         }
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        h2 {
+            padding-top: 0.8em;
+            font-size: 120%;
+        }
+        h2 + h3 {
+            padding-top: 0.3em;
+        }
+        h3 {
+            font-size: 110%;
+            border-bottom: none;
         }
         p {
-            line-height: 1.6;
+            margin-top: 0.5em;
+            margin-bottom: 0.1em;
+            padding: 0;
+            line-height: 1.3;
         }
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #7f8c8d;
+        pre {
+            padding: 0;
+            margin: 0;
+        }
+        div#footer {
+            font-size: small;
+            border-top: 1px solid #c0c0c0;
+            margin-top: 3.0em;
+            padding-top: 0.3em;
+            color: #c0c0c0;
+        }
+        div#footer a {
+            color: #80a0b0;
+        }
+        div#footer a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+        div#footer-text {
+            float: left;
+            padding-bottom: 8px;
+        }
+        ul, ol, dl {
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+            padding-top: 0.0em;
+        }
+        dt {
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+        }
+        dl {
+            margin-left: 20px;
+        }
+        dd {
+            color: #222222;
+        }
+        dd > *:first-child {
+            margin-top: -0.3em;
+        }
+        ul {
+            margin-bottom: 1.0em;
+            list-style-position: outside;
+            list-style-type: square;
+        }
+        p + ul, p + ol {
+            margin-top: 0.5em;
+        }
+        li ul, li ol {
+            margin-top: 0.5em;
+        }
+        ol {
+            list-style-position: outside;
+            list-style-type: decimal;
+        }
+        li p, dd p {
+            margin-top: 0.0em;
+            padding: 0;
+        }
+        ol ol {
+            list-style-type: lower-alpha;
+        }
+        ol ol ol {
+            list-style-type: lower-roman;
+        }
+        p + div.codeblock {
+            margin-top: 0.6em;
+        }
+        div.codeblock, div.infoblock {
+            margin-right: 0%;
+            margin-top: 1.2em;
+            margin-bottom: 1.3em;
+        }
+        div.blocktitle {
+            font-weight: bold;
+            color: #cd7b62;
+            margin-top: 1.2em;
+            margin-bottom: 0.1em;
+        }
+        div.blockcontent {
+            border: 1px solid silver;
+            padding: 0.3em 0.5em;
+        }
+        div.infoblock > div.blockcontent {
+            background: #ffffee;
+        }
+        div.blockcontent p + ul, div.blockcontent p + ol {
+            margin-top: 0.4em;
+        }
+        div.infoblock p {
+            margin-bottom: 0em;
+        }
+        div.infoblock li p, div.infoblock dd p {
+            margin-bottom: 0.5em;
+        }
+        div.infoblock p + p {
+            margin-top: 0.8em;
+        }
+        div.codeblock > div.blockcontent {
+            background: #f6f6f6;
+        }
+        span.pycommand {
+            color: #000070;
+        }
+        span.statement {
+            color: #008800;
+        }
+        span.builtin {
+            color: #000088;
+        }
+        span.special {
+            color: #990000;
+        }
+        span.operator {
+            color: #880000;
+        }
+        span.error {
+            color: #aa0000;
+        }
+        span.comment, span.comment > *, span.string, span.string > * {
+            color: #606060;
+        }
+        @media print {
+            #layout-menu {
+                display: none;
+            }
+        }
+        #fwtitle {
+            margin: 2px;
+        }
+        #fwtitle #toptitle {
+            padding-left: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        #layout-content h1:first-child, #layout-content h2:first-child, #layout-content h3:first-child {
+            margin-top: -0.7em;
+        }
+        div#toptitle h1, #layout-content div#toptitle h1 {
+            margin-bottom: 0.0em;
+            padding-bottom: 0.1em;
+            padding-top: 0;
+            margin-top: 0.5em;
+            border-bottom: none;
+        }
+        img.eq {
+            padding: 0;
+            padding-left: 0.1em;
+            padding-right: 0.1em;
+            margin: 0;
+        }
+        img.eqwl {
+            padding-left: 2em;
+            padding-top: 0.6em;
+            padding-bottom: 0.2em;
+            margin: 0;
+        }
+        table + table {
+            margin-top: 1em;
+        }
+        tr.heading {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+        img {
+            border: none;
+        }
+        table.imgtable, table.imgtable td {
+            border: none;
+            padding-right: 3em;
+        }
+        /* 针对表格图片的额外样式 */
+        .imgtable img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
+    <!-- 如果需要 Google Analytics，请取消注释并替换跟踪ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
 </head>
 <body>
-    <div class="container">
-        <h1>欢迎来到我的小站</h1>
-        <p>大家好！我是 <strong>你的名字</strong>，一名编程爱好者。</p>
-        <p>这是我的个人主页，目前还在建设中，以后会分享我的学习笔记和项目。</p>
-        <p>如果你想联系我，可以发邮件到：<a href="mailto:你的邮箱@example.com">你的邮箱@example.com</a></p>
-        <p>最后更新：<script>document.write(document.lastModified);</script></p>
+<div id="layout-content">
+    <!-- 头像和名字区域 -->
+    <table class="imgtable">
+        <tbody>
+        <tr>
+            <td>
+                <!-- 头像图片：请将您的头像保存为 hw.jpg 放在同一目录下，或修改 src 路径 -->
+                <img src="./hw.jpg" alt="Your Photo" width="128px" height="180px">
+                <!-- 如果没有图片，可以暂时注释掉上面一行，使用文字代替 -->
+                <!-- <div style="width:128px; height:180px; background:#ccc; text-align:center; line-height:180px;">Photo</div> -->
+            </td>
+            <td align="left">
+                <h1>
+                    您的姓名
+                    <!-- 名字图片：hw_name.png，如果没有可以删除或替换为文字 -->
+                    <!-- <img src="./hw_name.png" height="64px" style="margin-bottom:-24px" alt=""> -->
+                </h1>
+                <p>
+                    职称（例如：Research Assoc. Professor）<br>
+                    学院（例如：College of Computer Science）<br>
+                    学校（例如：Sichuan University）<br>
+                </p>
+                <p>
+                    E-mail: your.email [@ <i>sign</i>] example.com (<i>or</i> alias [@ <i>sign</i>] university.edu.cn<br>
+                    办公室地址：Room XXX, Building Name, Campus
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- 新闻/通知栏（红色醒目） -->
+    <p>-–&gt;&gt; <span style="color:Red"><i><b>News</b></i>: Your news here (e.g., recruiting students, new paper).</span></p>
+
+    <!-- Call for Papers 等额外信息 -->
+    <p><span style="color:Black"><i><b>Call for Papers</b></i>: Your CfP details. <a href="https://example.com" target="_blank">Link</a>.</span></p>
+
+    <h2>Short Bio</h2>
+    <p>
+        在此处填写您的简短学术介绍。例如：Your Name is a ... He received his Ph.D. from ... He worked at ... His research interests include ...
+    </p>
+    <p>
+        He is also affiliated with <a href="https://yourlab.com" target="_blank">Your Lab</a>.
+    </p>
+
+    <h2>Research Interests</h2>
+    <ul>
+        <li><p>Interest 1 (e.g., Lifelong Learning)</p></li>
+        <li><p>Interest 2</p></li>
+        <li><p>Interest 3</p></li>
+        <li><p>Interest 4</p></li>
+        <li><p>Interest 5</p></li>
+    </ul>
+
+    <h2>Publications</h2>
+    <ul>
+        <li><p><a href="your-publications.html" target="_blank">Publications</a> (<span style="color: Teal">in chronological order</span>)</p></li>
+        <li><p><a href="https://scholar.google.com/citations?user=YOURID" target="_blank">Google Scholar</a></p></li>
+        <li><p><a href="https://dblp.uni-trier.de/pid/xxx/xxxx.html" target="_blank">DBLP</a></p></li>
+    </ul>
+
+    <h2>Professional Activities</h2>
+    <p>Conference Program Committee</p>
+    <ul>
+        <li><p>Senior Area Chair: Conference (Year)</p></li>
+        <li><p>Area Chair: Conference (Year)</p></li>
+        <li><p>Senior PC: Conference (Years)</p></li>
+        <li><p>Year: Conference list...</p></li>
+        <!-- 根据实际情况添加更多项 -->
+    </ul>
+    <p>Journal Reviewer</p>
+    <ul>
+        <li><p>Journal Name (Role, Years)</p></li>
+        <li><p>ACL Rolling Review (ARR): Year - present</p></li>
+        <li><p>Other journals: ACM CSUR, IEEE TPAMI, etc.</p></li>
+    </ul>
+
+    <h2>Teaching</h2>
+    <ul>
+        <li><p>Course Name (Undergraduate/Graduate), Semester Year.</p></li>
+        <li><p>Course Name (Undergraduate/Graduate), Semester Year.</p></li>
+        <li><p>Joint Course: details.</p></li>
+    </ul>
+
+    <div id="footer">
+        <div id="footer-text">
+            Last Update: Mar 20, 2026, by <a href="https://yourname.github.io/">Your Name</a>.
+        </div>
     </div>
-    <div class="footer">
-        &copy; 2025 你的名字. 由 GitHub Pages 强力驱动.
-    </div>
+</div>
 </body>
 </html>
