@@ -1,24 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>您的姓名 - 个人主页</title>
     <style>
         /* ===== jemdoc 样式表 (已整合) ===== */
-        /* 以下内容来自您提供的 jemdoc.css，未作修改 */
         table#tlayout {
             border: none;
             border-collapse: separate;
             background: white;
         }
         html {
-            background-color: #f5f5f5; /* #eeeeee */
+            background-color: #f5f5f5;
         }
         body {
             font-family: Georgia, serif;
             color: #000;
-            background-color: #f5f5f5; /* #ffffff */
-            text-align: left; /* for IE */
+            background-color: #f5f5f5;
+            text-align: left;
             margin-top: 30px;
             margin-bottom: 30px;
             margin-left: auto;
@@ -107,9 +106,7 @@
         div#toptitle {
             margin-bottom: 1.5em;
             padding-bottom: 0.2em;
-            /* border-bottom: 3px double gray; */
         }
-        /* Reduce space if we begin the page with a title. */
         div#toptitle + h2, div#toptitle + h3 {
             margin-top: 0.7em;
         }
@@ -326,7 +323,6 @@
             border: none;
             padding-right: 3em;
         }
-        /* 针对表格图片的额外样式 */
         .imgtable img {
             max-width: 100%;
             height: auto;
@@ -350,10 +346,10 @@
         <tbody>
         <tr>
             <td>
-                <!-- 头像图片：请将您的头像保存为 hw.jpg 放在同一目录下，或修改 src 路径 -->
-                <img src="./hw.jpg" alt="Your Photo" width="128px" height="180px">
-                <!-- 如果没有图片，可以暂时注释掉上面一行，使用文字代替 -->
-                <!-- <div style="width:128px; height:180px; background:#ccc; text-align:center; line-height:180px;">Photo</div> -->
+                <!-- 头像图片：请将您的照片保存为 hw.jpg 放在同一目录下，或修改 src 路径 -->
+                <img src="./hw.jpg" alt="您的照片" width="128px" height="180px">
+                <!-- 如果没有图片，可以暂时注释掉上面一行，使用文字占位 -->
+                <!-- <div style="width:128px; height:180px; background:#ccc; text-align:center; line-height:180px;">照片</div> -->
             </td>
             <td align="left">
                 <h1>
@@ -362,13 +358,13 @@
                     <!-- <img src="./hw_name.png" height="64px" style="margin-bottom:-24px" alt=""> -->
                 </h1>
                 <p>
-                    职称（例如：Research Assoc. Professor）<br>
-                    学院（例如：College of Computer Science）<br>
-                    学校（例如：Sichuan University）<br>
+                    职称（例如：研究副教授）<br>
+                    学院（例如：计算机科学学院）<br>
+                    学校（例如：四川大学）<br>
                 </p>
                 <p>
-                    E-mail: your.email [@ <i>sign</i>] example.com (<i>or</i> alias [@ <i>sign</i>] university.edu.cn<br>
-                    办公室地址：Room XXX, Building Name, Campus
+                    电子邮件：your.email [@ <i>符号</i>] example.com（或 alias [@ <i>符号</i>] university.edu.cn）<br>
+                    办公室地址：XXX 房间，建筑名称，校区
                 </p>
             </td>
         </tr>
@@ -376,61 +372,60 @@
     </table>
 
     <!-- 新闻/通知栏（红色醒目） -->
-    <p>-–&gt;&gt; <span style="color:Red"><i><b>News</b></i>: Your news here (e.g., recruiting students, new paper).</span></p>
+    <p>-–&gt;&gt; <span style="color:Red"><i><b>新闻</b></i>: 您的通知内容（例如：招收学生，新论文发表）。</span></p>
 
-    <!-- Call for Papers 等额外信息 -->
-    <p><span style="color:Black"><i><b>Call for Papers</b></i>: Your CfP details. <a href="https://example.com" target="_blank">Link</a>.</span></p>
+    <!-- 征稿信息等额外内容 -->
+    <p><span style="color:Black"><i><b>征稿通知</b></i>: 您的征稿详情。 <a href="https://example.com" target="_blank">链接</a>。</span></p>
 
-    <h2>Short Bio</h2>
+    <h2>个人简介</h2>
     <p>
-        在此处填写您的简短学术介绍。例如：Your Name is a ... He received his Ph.D. from ... He worked at ... His research interests include ...
+        您的姓名是...他在...获得博士学位。他曾工作于...目前的研究兴趣包括...他是...实验室的成员。
     </p>
     <p>
-        He is also affiliated with <a href="https://yourlab.com" target="_blank">Your Lab</a>.
+        他也是 <a href="https://yourlab.com" target="_blank">您的实验室</a> 的成员。
     </p>
 
-    <h2>Research Interests</h2>
+    <h2>研究兴趣</h2>
     <ul>
-        <li><p>Interest 1 (e.g., Lifelong Learning)</p></li>
-        <li><p>Interest 2</p></li>
-        <li><p>Interest 3</p></li>
-        <li><p>Interest 4</p></li>
-        <li><p>Interest 5</p></li>
+        <li><p>兴趣1（例如：终身学习）</p></li>
+        <li><p>兴趣2</p></li>
+        <li><p>兴趣3</p></li>
+        <li><p>兴趣4</p></li>
+        <li><p>兴趣5</p></li>
     </ul>
 
-    <h2>Publications</h2>
+    <h2>出版物</h2>
     <ul>
-        <li><p><a href="your-publications.html" target="_blank">Publications</a> (<span style="color: Teal">in chronological order</span>)</p></li>
+        <li><p><a href="your-publications.html" target="_blank">出版物</a>（<span style="color: Teal">按时间顺序</span>）</p></li>
         <li><p><a href="https://scholar.google.com/citations?user=YOURID" target="_blank">Google Scholar</a></p></li>
         <li><p><a href="https://dblp.uni-trier.de/pid/xxx/xxxx.html" target="_blank">DBLP</a></p></li>
     </ul>
 
-    <h2>Professional Activities</h2>
-    <p>Conference Program Committee</p>
+    <h2>专业活动</h2>
+    <p>会议程序委员会</p>
     <ul>
-        <li><p>Senior Area Chair: Conference (Year)</p></li>
-        <li><p>Area Chair: Conference (Year)</p></li>
-        <li><p>Senior PC: Conference (Years)</p></li>
-        <li><p>Year: Conference list...</p></li>
-        <!-- 根据实际情况添加更多项 -->
+        <li><p>资深领域主席：会议名称（年份）</p></li>
+        <li><p>领域主席：会议名称（年份）</p></li>
+        <li><p>资深程序委员：会议名称（年份范围）</p></li>
+        <li><p>年份：会议列表...</p></li>
     </ul>
-    <p>Journal Reviewer</p>
+    <p>期刊审稿人</p>
     <ul>
-        <li><p>Journal Name (Role, Years)</p></li>
-        <li><p>ACL Rolling Review (ARR): Year - present</p></li>
-        <li><p>Other journals: ACM CSUR, IEEE TPAMI, etc.</p></li>
+        <li><p>期刊名称（角色，年份）</p></li>
+        <li><p>ACL滚动审稿（ARR）：年份 - 至今</p></li>
+        <li><p>其他期刊：ACM CSUR、IEEE TPAMI等</p></li>
     </ul>
 
-    <h2>Teaching</h2>
+    <h2>教学</h2>
     <ul>
-        <li><p>Course Name (Undergraduate/Graduate), Semester Year.</p></li>
-        <li><p>Course Name (Undergraduate/Graduate), Semester Year.</p></li>
-        <li><p>Joint Course: details.</p></li>
+        <li><p>课程名称（本科/研究生），学期 年份。</p></li>
+        <li><p>课程名称（本科/研究生），学期 年份。</p></li>
+        <li><p>联合课程：详情。</p></li>
     </ul>
 
     <div id="footer">
         <div id="footer-text">
-            Last Update: Mar 20, 2026, by <a href="https://yourname.github.io/">Your Name</a>.
+            最后更新：2026年3月20日，由 <a href="https://yourname.github.io/">您的姓名</a>。
         </div>
     </div>
 </div>
